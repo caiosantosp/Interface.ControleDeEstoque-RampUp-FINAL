@@ -1,0 +1,147 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <h1> Bem Vindo <strong>Nome</strong>!</h1>
+    <div class="row">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info mb-1">
+                                Total de produtos no estoque
+                            </div>
+                            <div class="h3 mb-0">
+                                <h5>@Html.DisplayFor(Model => Model.TotalEstoques)</h5>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-archive fa-2x text-info"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success mb-1">
+                                Total de produtos Vendidos
+                            </div>
+                            <div class="h3 mb-0">
+                                <h5>@Html.DisplayFor(Model => Model.TotalVendas)</h5>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-shopping-bag fa-2x text-success"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning mb-1">
+                                Melhor Venda
+                            </div>
+                            <div class="h3 mb-0">
+                                    <h5>Camisa Lacoste</h5>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-trophy fa-2x text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col">
+
+            <h3 class="mb-3 mt-4 ml-2">10 Ultimos produtos adicionados</h3>
+
+            <div class="rounded bg-white shadow-sm border">
+                <table class="table table-striped border-0">
+                    <thead class="table table-borderless">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Tam</th>
+                            <th scope="col">Qtd</th>
+                            <th scope="col">Vendas</th>
+                        </tr>
+                    </thead>
+                    @foreach(var data in Model.Produtos)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>@Html.DisplayFor(Model => data.Id)</td>
+                                <td>@Html.DisplayFor(Model => data.Nome)</td>
+                                <td>@Html.DisplayFor(Model => data.Tamanho)</td>
+                                <td>@Html.DisplayFor(Model => data.Quantidade)</td>
+                                <td>@Html.DisplayFor(Model => data.TotalDeVendas)</td>
+                            </tr>
+                        </tbody>
+                    }
+                    
+                </table>
+            </div>
+        </div>
+        <div class="col col-lg-4">
+
+            <h3 class="mb-3 mt-4 ml-2">Encomenda</h3>
+
+            <div class="rounded bg-white shadow-sm border">
+                <table class="table table-striped border-0">
+                    <thead class="table table-borderless">
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Data</th>
+                        </tr>
+                    </thead>
+
+                        <tbody>
+                            <tr>
+                                <td scope="col">001</td>
+                                <td scope="col">Caio</td>
+                                <td scope="col">Camisa Lacoste</td>
+                                <td scope="col">21-03-2022</td>
+                            </tr>
+                             <tr>
+                                <td scope="col">002</td>
+                                <td scope="col">Raphael</td>
+                                <td scope="col">Camisa Adidas</td>
+                                <td scope="col">21-02-2022</td>
+                            </tr>
+                             <tr>
+                                <td scope="col">003</td>
+                                <td scope="col">Caio</td>
+                                <td scope="col">Camisa Nike</td>
+                                <td scope="col">21-03-2022</td>
+                            </tr>
+
+                        </tbody>
+                   
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

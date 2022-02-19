@@ -1,0 +1,62 @@
+﻿@page
+@model ControleDeEstoqueProduto.Pages.Produtos.DetalheModel
+@{
+}
+    <div class="card-header text-center">
+        <h1 class="display-4">Detalhe do Produto: <strong>Camisa</strong></h1>
+    </div>
+
+    <br/>
+
+    <div class="container" style="background-color: rgb(218, 216, 216);border-radius: 30px;">
+        <br />
+        <div class="d-flex justify-content-center">
+            <img style="border-style: solid;border-radius: 30px;border-width: 1px;padding:0px" class="img-fluid col-md-4" src='@Html.DisplayFor(Model => Model.produtos.UrlImagem)'
+                alt="Imagem produto">
+        </div>
+        <br>
+        <table style="border: black;text-align: center;" class="table table-bordered table-light">
+            <thead>
+                <tr>
+                    <th style="border-color: black">Cor</th>
+                    <th style="border-color: black">Quantidade</th>
+                    <th style="border-color: black">Marca</th>
+                    <th style="border-color: black">Compras</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border-color: black">@Html.DisplayFor(Model => Model.produtos.Cor)</td>
+                    <td style="border-color: black">@Html.DisplayFor(Model => Model.produtos.Quantidade)</td>
+                    <td style="border-color: black">@Html.DisplayFor(Model => Model.produtos.Marca)</td>
+                    <td style="border-color: black">@Html.DisplayFor(Model => Model.produtos.TotalDeCompras)</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th style="border-color: black">Preço</th>
+                    <th style="border-color: black">Composição</th>
+                    <th style="border-color: black">Gênero</th>
+                    <th style="border-color: black">Vendas</th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td style="border-color: black">R$ @Html.DisplayFor(Model => Model.produtos.Preco)</td>
+                        <td style="border-color: black">@Html.DisplayFor(Model => Model.produtos.Composicao)</td>
+                        <td style="border-color: black">@Html.DisplayFor(Model => Model.produtos.Genero)</td>
+                        <td style="border-color: black">@Html.DisplayFor(Model => Model.produtos.TotalDeVendas)</td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+        <br>
+    </div>
+    <br>
+    <div style="text-align:center;">
+        <a class=" btn btn-secondary ">Voltar</a>
+        <a asp-page="/Produtos/Editar" asp-route-id="@Model.produtos.Id" class="btn btn-primary">Editar</a>
+        <a asp-page="/Produtos/Deletar" asp-route-id="@Model.produtos.Id" class="btn btn-danger">Deletar</a>
+        <br>
+        <br>
+    </div>
+    <br>

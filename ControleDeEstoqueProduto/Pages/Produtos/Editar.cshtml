@@ -1,0 +1,100 @@
+﻿@page 
+@model ControleDeEstoqueProduto.Pages.Produtos.EditarModel 
+@{ 
+}
+    <div class="col-md-12 text-center">
+        <br>
+        <h1>Editar Produto do Estoque</h1>
+        <br>
+    </div>
+
+    <div class="container" style="background-color: #f2f7fa;border-radius: 10px;">
+        <form method="post">
+            <input type="hidden" asp-for="produtos.Id" />
+            <br>
+            <br>
+            <div class="row my-2">
+                <div class="col">
+                    <h5 class="font-weight-light">Nome</h5>
+                    <input asp-for="produtos.Nome" placeholder="Nome do produto" maxlength="10" class="form-control" required />
+                </div>
+                <div class="col">
+                    <h5 class="font-weight-light">Gênero</h5>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Escolha</label>
+                        </div>
+                        <select asp-for="produtos.Genero" class="custom-select" id="inputGroupSelect01" required>
+                              <option selected value="Nenhum">Nenhum</option>
+                              <option value="Infantil">Infantil</option>
+                              <option value="Masculino">Masculino</option>
+                              <option value="Feminino">Feminino</option>
+                              <option value="Ambos">Ambos</option>
+                            </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 class="font-weight-light">Cor</h5>
+                    <input asp-for="produtos.Cor" placeholder="Cor do produto" maxlength="10" class="form-control" required/>
+                </div>
+                <div class="col">
+                    <h5 class="font-weight-light">Composição</h5>
+                    <input asp-for="produtos.Composicao" placeholder="Tecido do produto" class="form-control" required/>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 class="font-weight-light">Preço</h5>
+                    <input asp-for="produtos.Preco" placeholder="R$" maxlength="5" class="form-control" required/>
+                </div>
+                <div class="col">
+                    <h5 class="font-weight-light">Quantidade</h5>
+                    <input asp-for="produtos.Quantidade" placeholder="Qtd de produtos" maxlength="4" type="number" class="form-control" required/>
+                </div>
+                <div class="col">
+                    <h5 class="font-weight-light">Marca</h5>
+                    <input asp-for="produtos.Marca" placeholder="Marca Do Produto" maxlength="15" class="form-control" required/>
+                </div>
+                <div class="col">
+                    <h5 class="font-weight-light">Tamanho</h5>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Escolha</label>
+                        </div>
+                        <select asp-for="produtos.Tamanho" class="custom-select" id="inputGroupSelect01" required>
+                              <option selected>Nenhum</option>
+                              <option value="Unico">Unico</option>
+                              <option value="PP">PP</option>
+                              <option value="P">P</option>
+                              <option value="M">M</option>
+                              <option value="G">G</option>
+                              <option value="GG">GG</option>
+                              <option value="EG">EG</option>
+                              <option value="EGG">EGG</option>
+                            </select>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h5 class="font-weight-light">Link da Imagem</h5>
+                    <input asp-for="produtos.UrlImagem" placeholder="https://" class="form-control" required/>
+                </div>
+            </div>
+            <br />
+
+            <div class="container">
+                <div class="col-md-12 text-center">
+                    <a class="btn btn-secondary btn-lg" class="nav-link text-dark" asp-area="" asp-page="/Index">Voltar</a>
+                    <button type="submit" class="btn btn-primary btn-lg">Editar</button>
+                </div>
+            </div>
+            <br />
+            <br />
+        </form>
+    </div>

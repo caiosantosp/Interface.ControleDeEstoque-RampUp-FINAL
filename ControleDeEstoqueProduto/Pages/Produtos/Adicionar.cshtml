@@ -1,0 +1,103 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Adicionar novo Produto";
+}
+<div class="col-md-12 text-center">
+        <br>
+        <h1 class="display-4">
+            Adicionar Produto ao Estoque
+        </h1>
+        <br>
+    </div>
+
+    <div class="container" style="background-color: #f2f7fa;border-radius: 10px;">
+        <form method="post">
+            <br>
+            <br>
+            <div class="row my-2">
+                <div class="col">
+                    <h5 class="font-weight-light">Nome</h5>
+                    <input placeholder="Nome do produto" id="nome" name="nome" maxlength="10" class="form-control" required />
+                </div>
+                <div class="col">
+                    <h5 class="font-weight-light">Gênero</h5>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Escolha</label>
+                        </div>
+                        <select id="genero" name="genero" class="custom-select" id="inputGroupSelect01" required>
+                          <option selected>Nenhum</option>
+                          <option value="Infantil">Infantil</option>
+                          <option value="Masculino">Masculino</option>
+                          <option value="Feminino">Feminino</option>
+                          <option value="Ambos">Ambos</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 class="font-weight-light">Cor</h5>
+                    <input placeholder="Cor do produto" id="cor" maxlength="10" name="cor" class="form-control" required/>
+                </div>
+                <div class="col">
+                    <h5 class="font-weight-light">Composição</h5>
+                    <input placeholder="Tecido do produto" id="composicao" name="composicao" class="form-control" required/>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 class="font-weight-light">Preço</h5>
+                    <input placeholder="R$" id="preco" name="preco" maxlength="5" class="form-control" required/>
+                </div>
+                <div class="col">
+                    <h5 class="font-weight-light">Quantidade</h5>
+                    <input placeholder="Qtd de produtos" id="quantidade" maxlength="4" name="quantidade" type="number" class="form-control" required/>
+                </div>
+                <div class="col">
+                    <h5 class="font-weight-light">Marca</h5>
+                    <input placeholder="Marca Do Produto" id="marca" maxlength="15" name="marca" class="form-control" required/>
+                </div>
+                <div class="col">
+                    <h5 class="font-weight-light">Tamanho</h5>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Escolha</label>
+                        </div>
+                        <select id="tamanho" name="tamanho" class="custom-select" id="inputGroupSelect01" required>
+                          <option selected>Nenhum</option>
+                          <option value="Unico">Unico</option>
+                          <option value="PP">PP</option>
+                          <option value="P">P</option>
+                          <option value="M">M</option>
+                          <option value="G">G</option>
+                          <option value="GG">GG</option>
+                          <option value="EG">EG</option>
+                          <option value="EGG">EGG</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h5 class="font-weight-light">Link da Imagem</h5>
+                    <input id="UrlImagem" name="UrlImagem" placeholder="https://" class="form-control" required/>
+                </div>
+            </div>
+
+            <div class="container">
+                <br>
+                <br>
+                <div class="col-md-12 text-center">
+                    <a class="btn btn-secondary btn-lg" class="nav-link text-dark" asp-area="" asp-page="/Index">Voltar</a>
+                    <button type="submit" class="btn btn-primary btn-lg">Adicionar</button>
+                </div>
+                <br>
+            </div>
+
+        </form>
+    </div>

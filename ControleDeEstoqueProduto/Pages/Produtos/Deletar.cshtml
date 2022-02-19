@@ -1,0 +1,21 @@
+﻿@page
+@model ControleDeEstoqueProduto.Pages.Produtos.DeletarModel
+@{
+}
+<div class="card text-center">
+        <div class="card-header">
+            <h1 class="display-4">Confirmação de exlcusão</h1>
+        </div>
+        <div class="card-body">
+            <h5 class="display-h1">Você deseja realmente excluir o produto <strong>@Html.DisplayFor(Model => Model.produtos.Nome)</strong>?</h5>
+        </div>
+        <div class="container">
+            <form method="post">
+                <input type="hidden" asp-for="produtos.Id" />
+                <a asp-page="./Estoque" class="btn btn-secondary">Voltar</a>
+                <input type="submit" value="Deletar" class="btn btn-danger" />
+            </form>
+        </div>
+        <br>
+        <h7>Lembre-se: Isso não poderá ser desfeito.</h7>
+  </div>

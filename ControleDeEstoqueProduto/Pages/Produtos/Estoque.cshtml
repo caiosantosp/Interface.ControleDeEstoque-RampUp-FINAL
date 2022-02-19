@@ -1,0 +1,65 @@
+﻿@page
+@model ControleDeEstoqueProduto.Pages.Produtos.EstoqueModel
+@{
+}
+<div class="align-items-center text-center">
+        <h1 class="display-4">Controle do Estoque</h1>
+        <hr>
+        <br/>
+    </div>
+
+    <section>
+        <div style="background-color: #f2f7fa;" class="container">
+            <br>
+            <div class="row">
+                @foreach (var data in Model.Produtos){
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img style="width: 100%" class="card-img-top img-fluid" src='@Html.DisplayFor(ModelItem => data.UrlImagem)' alt="Imagem">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>
+                                        <strong>Nome: </strong>
+                                        <p>@Html.DisplayFor(ModelItem => data.Nome)</p>
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>
+                                        <strong>Código: </strong>
+                                        <p>@Html.DisplayFor(ModelItem => data.Id)</p>
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>
+                                        <strong>Tamanho: </strong>
+                                        <p>@Html.DisplayFor(ModelItem => data.Tamanho)</p>
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>
+                                        <strong>Cor: </strong>
+                                        <p>@Html.DisplayFor(ModelItem => data.Cor)</p>
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>
+                                        <strong>Composição: </strong>
+                                        <p>@Html.DisplayFor(ModelItem => data.Composicao)</p>
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>
+                                        <strong>Marca: </strong>
+                                        <p>@Html.DisplayFor(ModelItem => data.Marca)</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <a asp-page="/Produtos/Detalhe" asp-route-id="@data.Id" class="btn btn-primary btn-lg btn-block btn-sm">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
