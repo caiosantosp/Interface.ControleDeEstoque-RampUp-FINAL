@@ -23,7 +23,7 @@ namespace ControleDeEstoqueProduto.Pages
 
         public string TotalVendas { get; set; }
 
-        string UrlGlobal = "https://controledeestoquev3-beta.herokuapp.com/";
+        string UrlGlobal = "https://apicontroledeestoquev3beta.herokuapp.com/";
 
         public async Task OnGetAsync()
         {

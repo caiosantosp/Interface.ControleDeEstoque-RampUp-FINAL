@@ -14,7 +14,7 @@ namespace ControleDeEstoqueProduto.Pages.Produtos
         [BindProperty]
         public Produto produtos { get; set; }
 
-        string baseUrl = "https://controledeestoquev3-beta.herokuapp.com/";
+        string baseUrl = "https://apicontroledeestoquev3beta.herokuapp.com/";
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
