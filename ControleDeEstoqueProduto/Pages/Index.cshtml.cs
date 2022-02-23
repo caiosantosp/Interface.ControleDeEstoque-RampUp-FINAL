@@ -16,11 +16,14 @@ namespace ControleDeEstoqueProduto.Pages
     {
         public List<Produto> Produtos { get; set; }
 
+        [BindProperty]
+        public List<Produto> UltimosDezProdutos { get; set; }
+
         public string TotalEstoques { get; set; } 
 
         public string TotalVendas { get; set; }
 
-        string UrlGlobal = "https://controldeestoquev2.herokuapp.com/";
+        string UrlGlobal = "https://controledeestoquev3-beta.herokuapp.com/";
 
         public async Task OnGetAsync()
         {
@@ -46,7 +49,10 @@ namespace ControleDeEstoqueProduto.Pages
             }
             await GetTotalEstoque();
             await GetTotalVendas();
-        } 
+            await GetUltimos10Vendidos();
+        }
+
+        
         public async Task GetTotalEstoque()
         {
 
@@ -79,6 +85,28 @@ namespace ControleDeEstoqueProduto.Pages
                 var result = response.Content.ReadAsStringAsync().Result;
                 TotalVendas = result;
             }
+        }
+
+        public async Task GetUltimos10Vendidos()
+        {
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(UrlGlobal);
+
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await client.GetAsync(UrlGlobal + "api/Produtos/DezUltimosProdutosAdicionados");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string resultTotal = response.Content.ReadAsStringAsync().Result;
+                    UltimosDezProdutos = JsonConvert.DeserializeObject<List<Produto>>(resultTotal);
+                }
+                
+            }
+
         }
     }
 }

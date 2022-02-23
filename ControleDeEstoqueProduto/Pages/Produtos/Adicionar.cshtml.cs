@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using ControleDeEstoqueProduto.Models;
 using System.Net.Http;
@@ -17,7 +14,7 @@ namespace ControleDeEstoqueProduto.Pages.Produtos
         [BindProperty]
         public Produto Produto { get; set; }
 
-        string baseUrl = "https://controldeestoquev2.herokuapp.com/";
+        string baseUrl = "https://controledeestoquev3-beta.herokuapp.com/";
 
         public async Task<IActionResult> OnPostAsync() {
 
@@ -33,11 +30,10 @@ namespace ControleDeEstoqueProduto.Pages.Produtos
                 if (response.IsSuccessStatusCode)
                 {
                     return RedirectToPage("./Estoque");
-                    Console.WriteLine("Aqui");
                 }
                 else
                 {
-                    return RedirectToPage("./Error");
+                    return RedirectToPage("../Error");
                 }
 
             }

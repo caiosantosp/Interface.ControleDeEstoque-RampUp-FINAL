@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -18,7 +17,7 @@ namespace ControleDeEstoqueProduto.Pages.Produtos
         [BindProperty]
         public Produto produtos { get; set; }
 
-        string baseUrl = "https://controldeestoquev2.herokuapp.com/";
+        string baseUrl = "https://controledeestoquev3-beta.herokuapp.com/";
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -38,7 +37,7 @@ namespace ControleDeEstoqueProduto.Pages.Produtos
                 }
                 else
                 {
-                    return RedirectToPage("./Index");
+                    return RedirectToPage("../Error");
                 }
             }
             return Page();

@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "mOg6TLTpwSc2F+svxDdKvqAg4SvPQohveruLbb6gMBOwQweDSDRuBCdgUbB0+tHNl3Cpi8s9HwzipmFl1BCGww==",
+  "dgSpecHash": "FML1fd4nuN9/MZbhd3FkYImhYYJXi7vt/wbRyOQ6/voKMgn1CqgbkfACe8NV2YhEAGB03N2FgKOtZ62BpXTpjw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Caio Santos\\source\\repos\\ControleDeEstoqueProduto\\ControleDeEstoqueProduto\\ControleDeEstoqueProduto.csproj",
+  "projectFilePath": "C:\\Users\\Caio Portugal\\source\\repos\\Interface.ControleDeEstoque-V3-Beta\\ControleDeEstoqueProduto\\ControleDeEstoqueProduto.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Caio Santos\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
-    "C:\\Users\\Caio Santos\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Caio Portugal\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
+    "C:\\Users\\Caio Portugal\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

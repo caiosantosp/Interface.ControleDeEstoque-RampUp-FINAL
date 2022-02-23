@@ -87,15 +87,15 @@
                             <th scope="col">Vendas</th>
                         </tr>
                     </thead>
-                    @foreach(var data in Model.Produtos)
+                    @foreach(var res in Model.UltimosDezProdutos)
                     {
                         <tbody>
                             <tr>
-                                <td>@Html.DisplayFor(Model => data.Id)</td>
-                                <td>@Html.DisplayFor(Model => data.Nome)</td>
-                                <td>@Html.DisplayFor(Model => data.Tamanho)</td>
-                                <td>@Html.DisplayFor(Model => data.Quantidade)</td>
-                                <td>@Html.DisplayFor(Model => data.TotalDeVendas)</td>
+                                <td>@Html.DisplayFor(Model => res.Id)</td>
+                                <td>@Html.DisplayFor(Model => res.Nome)</td>
+                                <td>@Html.DisplayFor(Model => res.Tamanho)</td>
+                                <td>@Html.DisplayFor(Model => res.Quantidade)</td>
+                                <td>@Html.DisplayFor(Model => res.TotalDeVendas)</td>
                             </tr>
                         </tbody>
                     }
@@ -103,6 +103,7 @@
                 </table>
             </div>
         </div>
+        
         <div class="col col-lg-4">
 
             <h3 class="mb-3 mt-4 ml-2">Encomenda</h3>
