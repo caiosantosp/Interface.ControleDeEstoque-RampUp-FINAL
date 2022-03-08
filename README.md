@@ -45,7 +45,7 @@ Para a criação do CRUD utilizado na aplicação, foi criada uma API, onde toda
 <br>
 
 Para verificar a construção da API, acesse o seguinte repositório:
-- **https://apicontroledeestoquev3beta.herokuapp.com/api/Produtos**
+- **https://github.com/caiosantosp/API.ControleDeEstoque-V3-BETA**
 
 <br>
 
